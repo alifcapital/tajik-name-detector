@@ -1,3 +1,3 @@
-from .name_detector import NameDetector
+from .detect_names import NameDetector
 
 __all__ = ["NameDetector"]

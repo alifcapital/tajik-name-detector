@@ -3,7 +3,6 @@ import unicodedata
 
 import numpy as np
 import pandas as pd
-from imblearn.over_sampling import RandomOverSampler
 
 
 def load_csv_examples(csv_path):
@@ -258,6 +257,8 @@ def train_test_split(examples, test_size=20000):
 
 
 def create_balanced_train_set(pos_train, neg_train):
+    from imblearn.over_sampling import RandomOverSampler
+
     # Combine positive and negative training examples
     X_train = pos_train + neg_train
     y_train = [1] * len(pos_train) + [0] * len(neg_train)  # 1 for positive, 0 for negative

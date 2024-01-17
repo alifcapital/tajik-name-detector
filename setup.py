@@ -10,6 +10,7 @@ setup(
         "scipy",
         "joblib",
         "numpy",
+        "tqdm",
     ],
     package_data={
         "name_detector": ["checkpoints/*"],
