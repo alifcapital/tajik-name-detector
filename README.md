@@ -66,7 +66,7 @@ Here's an example script demonstrating how to use the `NameDetector`:
 from name_detector import NameDetector
 
 # Initialize the NameDetector
-name_detector = NameDetector(pipeline_path="checkpoints/pipeline.joblib", model_path="checkpoints/catboost_model.cbm")
+name_detector = NameDetector()
 
 # Text to analyze
 text = "Алиҷон Валиев рӯз аз рӯз худро беҳтар ҳис менамуд. Модараш Марям аз ин хушҳол буд."
