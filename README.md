@@ -76,5 +76,5 @@ windows, probabilities = name_detector.predict(text)
 
 # Display results
 for window, probability in zip(windows, probabilities):
-    print(f"{window:30s}  {probability[1]:.3f}")
+    print(f"{window:30s}  {probability:.3f}")
 ```

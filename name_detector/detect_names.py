@@ -17,9 +17,11 @@ class NameDetector:
     def predict(self, text):
         # window all two and three consecutive word tuples
         windows = self.pipeline.get_windows(text)
+        if not windows:
+            return [], []
         X_input, _ = self.pipeline.transform(windows)
         y_prob = self.model.predict_proba(X_input)
-        return windows, y_prob
+        return windows, y_prob[:, 1]
 
 
 def main():
@@ -33,7 +35,7 @@ def main():
     windows, y_prob = name_detector.predict(text)
 
     for window, prob in zip(windows, y_prob):
-        print(f"{window:30s}  {prob[1]:.3f}")
+        print(f"{window:30s}  {prob:.3f}")
 
 
 if __name__ == "__main__":
